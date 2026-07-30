@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 import {
@@ -7,114 +8,107 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 
-import {
-  MdEmail
-} from "react-icons/md";
+import { MdEmail } from "react-icons/md";
 
-import {
-  Download,
-  ArrowRight,
-} from "lucide-react";
+import Button from "./ui/Button";
+import Stats from "./Stats";
+import TechStack from "./TechStack";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050816]">
+    <section className="relative min-h-screen overflow-hidden bg-[#050816]">
 
       {/* Background Glow */}
-      <div className="absolute w-[700px] h-[700px] rounded-full bg-cyan-500/20 blur-[180px]" />
 
-      <motion.div
-        initial={{ opacity: 0, y: 60 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 text-center px-6 max-w-5xl"
-      >
+      <div className="absolute -top-40 left-1/2 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-cyan-500/20 blur-[170px]" />
 
-        {/* Badge */}
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col-reverse items-center gap-16 px-6 pt-32 lg:flex-row">
 
-        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-sm mb-8">
-          🚀 Software Engineer @ Tata Consultancy Services
-        </div>
+        {/* LEFT */}
 
-        {/* Intro */}
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          className="flex-1"
+        >
+          <span className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300">
+            🚀 Software Engineer @ Tata Consultancy Services
+          </span>
 
-        <p className="text-cyan-400 text-lg mb-3">
-          Hello, I'm
-        </p>
+          <h1 className="mt-8 text-5xl font-black leading-tight md:text-7xl">
+            Hi, I'm{" "}
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+              Rishav Yadav
+            </span>
+          </h1>
 
-        {/* Name */}
+          <h2 className="mt-6 text-2xl text-gray-300">
+            Backend Engineer • AI • Machine Learning • Data Science
+          </h2>
 
-        <h1 className="text-6xl md:text-8xl font-black bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
-          Rishav Yadav
-        </h1>
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-gray-400">
+            Building scalable backend systems with Java and Spring Boot while
+            developing intelligent AI-powered applications using Python,
+            Machine Learning and modern cloud technologies.
+          </p>
 
-        {/* Subtitle */}
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Button href="#projects">
+              View Projects
+            </Button>
 
-        <h2 className="mt-8 text-2xl md:text-3xl font-semibold text-gray-300">
-          Backend Engineer • AI • Machine Learning • Data Science
-        </h2>
+            <Button href="/resume.pdf" variant="secondary">
+              Download Resume
+            </Button>
 
-        {/* Description */}
+            <Button href="#contact" variant="secondary">
+              Hire Me
+            </Button>
+          </div>
 
-        <p className="mt-8 text-gray-400 text-lg leading-8 max-w-3xl mx-auto">
-          Passionate Software Engineer with 3+ years of experience building
-          scalable backend systems using Java, Spring Boot, Python and modern
-          cloud technologies while exploring Artificial Intelligence, Machine
-          Learning and Data Science to solve real-world problems.
-        </p>
 
-        {/* Buttons */}
+          <div className="mt-8 flex gap-6 text-3xl text-gray-300">
+            <a href="https://github.com/RISHAV1985" target="_blank">
+              <FaGithub className="hover:text-cyan-400 transition" />
+            </a>
 
-        <div className="mt-12 flex flex-wrap justify-center gap-5">
+            <a href="https://www.linkedin.com/in/rishavyadav-itengineer/" target="_blank">
+              <FaLinkedin className="hover:text-cyan-400 transition" />
+            </a>
 
-          <a
-            href="#projects"
-            className="flex items-center gap-2 px-7 py-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 transition text-black font-semibold"
-          >
-            View Projects
-            <ArrowRight size={18} />
-          </a>
+            <a href="mailto:rishavyadav1985@gmail.com">
+              <MdEmail className="hover:text-cyan-400 transition" />
+            </a>
+          </div>
 
-          <a
-            href="/resume.pdf"
-            className="flex items-center gap-2 px-7 py-4 rounded-xl border border-cyan-500 text-cyan-300 hover:bg-cyan-500/10 transition"
-          >
-            <Download size={18} />
-            Download Resume
-          </a>
+        </motion.div>
 
-        </div>
+        {/* RIGHT */}
 
-        {/* Social Icons */}
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-1 justify-center"
+        >
+          <div className="relative">
 
-        <div className="mt-12 flex justify-center gap-8">
+            <div className="absolute inset-0 rounded-full bg-cyan-400/20 blur-3xl" />
 
-          <a
-            href="https://github.com/RISHAV1985"
-            target="_blank"
-            className="hover:text-cyan-400 transition"
-          >
-            <FaGithub size={28} />
-          </a>
+            <Image
+              src="/images/profile.jpeg"
+              alt="Rishav Yadav"
+              width={420}
+              height={420}
+              priority
+              className="relative rounded-full border-4 border-cyan-400 object-cover shadow-[0_0_80px_rgba(34,211,238,0.4)]"
+            />
 
-          <a
-            href="https://www.linkedin.com/in/rishavyadav-itengineer/"
-            target="_blank"
-            className="hover:text-cyan-400 transition"
-          >
-           <FaLinkedin size={28} />
-          </a>
+          </div>
+        </motion.div>
 
-          <a
-            href="mailto:rishavyadav1985@gmail.com"
-            className="hover:text-cyan-400 transition"
-          >
-            <MdEmail size={28} />
-          </a>
-
-        </div>
-
-      </motion.div>
+      </div>
 
     </section>
   );
