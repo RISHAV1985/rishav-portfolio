@@ -32,12 +32,14 @@ export default function Hero() {
           transition={{ duration: 0.7 }}
           className="flex-1"
         >
-          <span className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300">
-            🚀 Software Engineer @ Tata Consultancy Services
-          </span>
+          <div className="flex justify-center lg:justify-start">
+  <span className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300">
+    🚀 Software Engineer @ Tata Consultancy Services
+  </span>
+</div>
 
           <h1 className="mt-8 text-5xl font-black leading-tight md:text-7xl">
-            Hi, I'm{" "}
+            Hi, I&apos;m 
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
               Rishav Yadav
             </span>
@@ -97,13 +99,13 @@ export default function Hero() {
             <div className="absolute inset-0 rounded-full bg-cyan-400/20 blur-3xl" />
 
             <Image
-              src="/images/profile.jpeg"
-              alt="Rishav Yadav"
-              width={420}
-              height={420}
-              priority
-              className="relative rounded-full border-4 border-cyan-400 object-cover shadow-[0_0_80px_rgba(34,211,238,0.4)]"
-            />
+  src="/images/profile.jpeg"
+  alt="Rishav Yadav"
+  width={420}
+  height={420}
+  priority
+  className="relative h-64 w-64 rounded-full border-4 border-cyan-400 object-cover shadow-[0_0_80px_rgba(34,211,238,0.4)] sm:h-80 sm:w-80 lg:h-[420px] lg:w-[420px]"
+/>
 
           </div>
         </motion.div>

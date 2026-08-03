@@ -7,6 +7,30 @@ import { projects } from "@/constants/projects";
 import {
   FaGithub
 } from "react-icons/fa";
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.18,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+    },
+  },
+};
+
 export default function Projects() {
   return (
     <section
@@ -17,39 +41,49 @@ export default function Projects() {
 
         {/* Section Heading */}
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h2 className="text-5xl font-bold">
-            Featured <span className="text-cyan-400">Projects</span>
-          </h2>
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="mx-auto max-w-4xl text-center"
+>
+  <h2 className="text-5xl font-bold">
+    Featured <span className="text-cyan-400">Projects</span>
+  </h2>
 
-          <p className="mt-6 text-gray-400 max-w-3xl mx-auto">
-            A collection of enterprise backend applications, AI projects,
-            research work and full-stack applications showcasing my
-            experience across Backend Engineering, Machine Learning and
-            Data Science.
-          </p>
-        </motion.div>
+  <p className="mt-6 text-lg leading-8 text-gray-400">
+    A collection of enterprise backend applications, AI projects,
+    research work and full-stack applications showcasing my
+    experience across Backend Engineering, Machine Learning and
+    Data Science.
+  </p>
+</motion.div>
 
         {/* Cards */}
 
-        <div className="mt-16 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
+        <motion.div
+  className="mt-16 grid gap-10 md:grid-cols-2 xl:grid-cols-3"
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+>
 
-          {projects.map((project, index) => (
+          {projects.map((project) => (
 
             <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.12 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -8 }}
-              className="overflow-hidden rounded-2xl border border-cyan-500/20 bg-white/5 backdrop-blur-lg transition-all duration-300 hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]"
-            >
+  key={project.id}
+  variants={cardVariants}
+  whileHover={{
+    y: -12,
+    scale: 1.03,
+    transition: {
+      duration: 0.25,
+    },
+  }}
+  className="overflow-hidden rounded-2xl border border-cyan-500/20 bg-white/5 backdrop-blur-lg hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]"
+>
 
               {/* Image */}
 
@@ -99,18 +133,29 @@ export default function Projects() {
 
                 <div className="mt-8 flex gap-4">
 
-                  <a
-                    href={project.github}
+<motion.a
+  whileHover={{
+    scale: 1.05,
+  }}
+  whileTap={{
+    scale: 0.95,
+  }}                    href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 rounded-lg border border-cyan-500/30 px-4 py-2 text-sm hover:bg-cyan-500/10 transition"
                   >
                     <FaGithub size={18} />
                     GitHub
-                  </a>
+                  </motion.a>
 
                   {project.demo !== "#" && (
-                    <a
+                    <motion.a
+  whileHover={{
+    scale: 1.05,
+  }}
+  whileTap={{
+    scale: 0.95,
+  }}
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -118,7 +163,7 @@ export default function Projects() {
                     >
                       <ExternalLink size={18} />
                       Live Demo
-                    </a>
+                    </motion.a>
                   )}
 
                 </div>
@@ -129,7 +174,7 @@ export default function Projects() {
 
           ))}
 
-        </div>
+        </motion.div>
 
       </div>
     </section>

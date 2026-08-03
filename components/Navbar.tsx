@@ -1,128 +1,90 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Menu, X, Download } from "lucide-react";
-
-const navItems = [
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "#projects" },
-  { name: "Research", href: "#research" },
-  { name: "Contact", href: "#contact" },
-];
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [active, setActive] = useState("About");
-  const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-
-      const sections = navItems.map((item) => ({
-        name: item.name,
-        section: document.querySelector(item.href),
-      }));
-
-      const scrollPos = window.scrollY + 120;
-
-      for (const item of sections) {
-        if (!item.section) continue;
-
-        const top = (item.section as HTMLElement).offsetTop;
-        const height = (item.section as HTMLElement).offsetHeight;
-
-        if (scrollPos >= top && scrollPos < top + height) {
-          setActive(item.name);
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const links = [
+    { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#projects" },
+    { name: "Research", href: "#research" },
+    { name: "Contact", href: "#contact" },
+  ];
 
   return (
-    <nav
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "border-b border-cyan-500/20 bg-[#050816]/80 backdrop-blur-xl"
-          : "bg-transparent"
-      }`}
-    >
+    <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#050816]/70 backdrop-blur-lg">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+
+        {/* Logo */}
 
         <a
           href="#"
-          className="text-3xl font-black text-cyan-400 transition hover:scale-105"
+          className="text-3xl font-black text-cyan-400"
         >
           Rishav
         </a>
 
-        {/* Desktop */}
-        <div className="hidden items-center gap-8 md:flex">
-          {navItems.map((item) => (
+        {/* Desktop Menu */}
+
+        <div className="hidden items-center gap-10 text-gray-300 md:flex">
+          {links.map((link) => (
             <a
-              key={item.name}
-              href={item.href}
-              className={`transition ${
-                active === item.name
-                  ? "text-cyan-400"
-                  : "text-gray-300 hover:text-cyan-400"
-              }`}
+              key={link.name}
+              href={link.href}
+              className="transition hover:text-cyan-400"
             >
-              {item.name}
+              {link.name}
             </a>
           ))}
 
           <a
             href="/resume.pdf"
-            download
-            className="flex items-center gap-2 rounded-lg border border-cyan-500 px-4 py-2 text-cyan-300 transition hover:bg-cyan-500 hover:text-black"
+            target="_blank"
+            className="rounded-lg border border-cyan-400 px-5 py-2 text-cyan-400 transition hover:bg-cyan-400 hover:text-black"
           >
-            <Download size={18} />
             Resume
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Button */}
+
         <button
+          onClick={() => setIsOpen(!isOpen)}
           className="text-cyan-400 md:hidden"
-          onClick={() => setMenuOpen(!menuOpen)}
         >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          {isOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="border-t border-cyan-500/20 bg-[#050816]/95 backdrop-blur-xl md:hidden">
-          <div className="flex flex-col gap-6 p-6">
-            {navItems.map((item) => (
+
+      {isOpen && (
+        <div className="border-t border-white/10 bg-[#050816] md:hidden">
+          <div className="flex flex-col items-center gap-6 py-8">
+
+            {links.map((link) => (
               <a
-                key={item.name}
-                href={item.href}
-                onClick={() => setMenuOpen(false)}
-                className={`transition ${
-                  active === item.name
-                    ? "text-cyan-400"
-                    : "text-gray-300"
-                }`}
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-lg text-gray-300 transition hover:text-cyan-400"
               >
-                {item.name}
+                {link.name}
               </a>
             ))}
 
             <a
               href="/resume.pdf"
-              download
-              className="rounded-lg bg-cyan-500 px-4 py-3 text-center font-semibold text-black"
+              target="_blank"
+              onClick={() => setIsOpen(false)}
+              className="rounded-lg border border-cyan-400 px-5 py-2 text-cyan-400 transition hover:bg-cyan-400 hover:text-black"
             >
-              Download Resume
+              Resume
             </a>
+
           </div>
         </div>
       )}
