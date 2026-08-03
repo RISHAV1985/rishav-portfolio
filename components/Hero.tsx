@@ -11,8 +11,6 @@ import {
 import { MdEmail } from "react-icons/md";
 
 import Button from "./ui/Button";
-import Stats from "./Stats";
-import TechStack from "./TechStack";
 
 export default function Hero() {
   return (
@@ -39,7 +37,7 @@ export default function Hero() {
 </div>
 
           <h1 className="mt-8 text-5xl font-black leading-tight md:text-7xl">
-            Hi, I&apos;m 
+            Hi, I&apos;m {" "}
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
               Rishav Yadav
             </span>
