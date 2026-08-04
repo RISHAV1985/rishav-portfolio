@@ -30,44 +30,97 @@ export default function Hero() {
           transition={{ duration: 0.7 }}
           className="flex-1"
         >
-          <div className="flex justify-center lg:justify-start">
+          <div className="mt-4 flex flex-wrap gap-3">
+
   <span className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300">
-    🚀 Software Engineer @ Tata Consultancy Services
+    💼 TCS
   </span>
+
+  <span className="rounded-full border border-green-500/30 bg-green-500/10 px-4 py-2 text-sm text-green-400">
+    🟢 Open to Work
+  </span>
+
+  <span className="rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm text-purple-300">
+    🇮🇳 India
+  </span>
+
 </div>
 
-          <h1 className="mt-8 text-5xl font-black leading-tight md:text-7xl">
-            Hi, I&apos;m {" "}
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Rishav Yadav
-            </span>
-          </h1>
+          <h1 className="mt-8 text-4xl font-black leading-tight md:text-4xl">
+  Building{"  "}
+  <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+    Scalable Backend Systems
+  </span>
+  <br />
+  & AI-Powered Applications
+</h1>
 
-          <h2 className="mt-6 text-2xl text-gray-300">
-            Backend Engineer • AI • Machine Learning • Data Science
-          </h2>
+<h2 className="mt-6 text-2xl font-semibold text-white">
+  Rishav Yadav
+</h2>
 
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-gray-400">
-            Building scalable backend systems with Java and Spring Boot while
-            developing intelligent AI-powered applications using Python,
-            Machine Learning and modern cloud technologies.
-          </p>
+<p className="mt-8 max-w-2xl text-lg leading-8 text-gray-400">
+  Software Engineer with <span className="text-cyan-400 font-semibold">3+ years</span> of
+  experience at Tata Consultancy Services, building enterprise-grade Java backend
+  systems, REST APIs and AI-powered applications using Spring Boot, Python,
+  Machine Learning and modern cloud technologies.
+</p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <Button href="#projects">
-              View Projects
-            </Button>
 
-            <Button href="/resume.pdf" variant="secondary">
-              Download Resume
-            </Button>
+  <Button href="#projects">
+    🚀 View Projects
+  </Button>
 
-            <Button href="#contact" variant="secondary">
-              Hire Me
-            </Button>
-          </div>
+  <Button href="/resume.pdf" variant="secondary">
+    📄 Resume
+  </Button>
 
+  <Button href="#contact" variant="secondary">
+    📧 Contact Me
+  </Button>
 
+</div>
+
+<div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
+
+  <div className="rounded-xl border border-cyan-500/20 bg-white/5 p-5 text-center backdrop-blur-lg">
+    <h3 className="text-3xl font-bold text-cyan-400">
+      3+
+    </h3>
+    <p className="mt-2 text-sm text-gray-400">
+      Years Experience
+    </p>
+  </div>
+
+  <div className="rounded-xl border border-cyan-500/20 bg-white/5 p-5 text-center backdrop-blur-lg">
+    <h3 className="text-3xl font-bold text-cyan-400">
+      100+
+    </h3>
+    <p className="mt-2 text-sm text-gray-400">
+      REST APIs Built
+    </p>
+  </div>
+
+  <div className="rounded-xl border border-cyan-500/20 bg-white/5 p-5 text-center backdrop-blur-lg">
+    <h3 className="text-3xl font-bold text-cyan-400">
+      50+
+    </h3>
+    <p className="mt-2 text-sm text-gray-400">
+      SQL Optimizations
+    </p>
+  </div>
+
+  <div className="rounded-xl border border-cyan-500/20 bg-white/5 p-5 text-center backdrop-blur-lg">
+    <h3 className="text-3xl font-bold text-cyan-400">
+      1
+    </h3>
+    <p className="mt-2 text-sm text-gray-400">
+      Research Publication
+    </p>
+  </div>
+
+</div>
           <div className="mt-8 flex gap-6 text-3xl text-gray-300">
             <a href="https://github.com/RISHAV1985" target="_blank">
               <FaGithub className="hover:text-cyan-400 transition" />
