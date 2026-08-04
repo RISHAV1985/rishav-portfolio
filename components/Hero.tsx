@@ -46,7 +46,7 @@ export default function Hero() {
 
 </div>
 
-          <h1 className="mt-8 text-4xl font-black leading-tight md:text-4xl">
+          <h1 className="mt-8 text-4xl font-black leading-tight md:text-4xl text-white">
   Building{"  "}
   <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
     Scalable Backend Systems
@@ -84,7 +84,7 @@ export default function Hero() {
 
 <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
 
-  <div className="rounded-xl border border-cyan-500/20 bg-white/5 p-5 text-center backdrop-blur-lg">
+  <div className="rounded-xl border border-cyan-500/20 bg-white/5 p-5 text-center backdrop-blur-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.25)]">
     <h3 className="text-3xl font-bold text-cyan-400">
       3+
     </h3>
@@ -93,7 +93,7 @@ export default function Hero() {
     </p>
   </div>
 
-  <div className="rounded-xl border border-cyan-500/20 bg-white/5 p-5 text-center backdrop-blur-lg">
+  <div className="rounded-xl border border-cyan-500/20 bg-white/5 p-5 text-center backdrop-blur-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.25)]">
     <h3 className="text-3xl font-bold text-cyan-400">
       100+
     </h3>
@@ -102,7 +102,7 @@ export default function Hero() {
     </p>
   </div>
 
-  <div className="rounded-xl border border-cyan-500/20 bg-white/5 p-5 text-center backdrop-blur-lg">
+  <div className="rounded-xl border border-cyan-500/20 bg-white/5 p-5 text-center backdrop-blur-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.25)]">
     <h3 className="text-3xl font-bold text-cyan-400">
       50+
     </h3>
@@ -111,7 +111,7 @@ export default function Hero() {
     </p>
   </div>
 
-  <div className="rounded-xl border border-cyan-500/20 bg-white/5 p-5 text-center backdrop-blur-lg">
+  <div className="rounded-xl border border-cyan-500/20 bg-white/5 p-5 text-center backdrop-blur-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.25)]">
     <h3 className="text-3xl font-bold text-cyan-400">
       1
     </h3>

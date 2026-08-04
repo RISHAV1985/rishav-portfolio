@@ -1,30 +1,59 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Rishav Yadav | Backend Engineer • AI/ML Engineer",
+  title: "Rishav Yadav | Software Engineer",
+
   description:
-    "Backend Engineer with 3+ years of experience at Tata Consultancy Services. Specializing in Java, Spring Boot, Python, Machine Learning, AI, REST APIs, and scalable backend systems.",
+    "Software Engineer at Tata Consultancy Services specializing in Java, Spring Boot, AI, Machine Learning and scalable backend systems.",
+
   keywords: [
     "Rishav Yadav",
-    "Backend Engineer",
-    "Java Developer",
+    "Java",
     "Spring Boot",
     "Python",
     "Machine Learning",
-    "Artificial Intelligence",
-    "Data Science",
+    "Backend Engineer",
     "Software Engineer",
     "Portfolio",
+    "AI",
+    "Data Science",
   ],
+
   authors: [{ name: "Rishav Yadav" }],
+  creator: "Rishav Yadav",
+
+  openGraph: {
+    title: "Rishav Yadav | Software Engineer",
+    description:
+      "Backend Engineer | AI | Machine Learning | Java | Spring Boot",
+    url: "https://rishav-portfolio-red-beta.vercel.app",
+    siteName: "Rishav Portfolio",
+
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Rishav Yadav",
+    description:
+      "Backend Engineer | AI | Machine Learning",
+    images: ["/images/og-image.png"],
+  },
 };
 
 export default function RootLayout({
@@ -33,8 +62,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={spaceGrotesk.variable}>
-      <body className="bg-[#050816] text-white antialiased">
+    <html lang="en">
+      <body className={inter.className}>
         {children}
       </body>
     </html>

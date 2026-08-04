@@ -13,43 +13,40 @@ import BackToTop from "@/components/BackToTop";
 import Github from "@/components/Github";
 import Footer from "@/components/Footer";
 import FadeIn from "@/components/animations/FadeIn";
+import Resume from "@/components/Resume";
 export default function Home() {
   return (
     <>
   <ScrollProgress />
   <Background />
   <Navbar />
-<FadeIn>
+
   <Hero />
-</FadeIn> 
-<FadeIn delay={0.1}>
+
+
   <About />
-</FadeIn>
-  <FadeIn delay={0.2}>
+
+  
   <TechStack />
-</FadeIn>
-  <FadeIn delay={0.3}>
+
+ 
   <Projects />
-</FadeIn>
-  <FadeIn delay={0.4}>
+
+
   <Experience />
-</FadeIn>
-  <FadeIn delay={0.5}>
+
   <Research />
-</FadeIn>
-  <FadeIn delay={0.6}>
+
   <Certifications />
-</FadeIn>
-  <FadeIn delay={0.7}>
+
   <Github />
-</FadeIn>
-  <FadeIn delay={0.8}>
+<Resume />
   <Contacts />
-</FadeIn>
+
   <BackToTop />
-  <FadeIn delay={0.9}>
+
   <Footer />
-</FadeIn>
+
 </>
   );
 }
