@@ -83,7 +83,7 @@ export default function Research() {
           <div className="mt-10 flex gap-4">
 
             <a
-              href="#"
+              href="https://onlinelibrary.wiley.com/doi/10.1002/9781394302994.ch5" target="_blank"
               className="inline-flex items-center gap-2 rounded-lg bg-cyan-500 px-5 py-3 font-semibold text-black transition hover:bg-cyan-400"
             >
               <ExternalLink size={18} />
