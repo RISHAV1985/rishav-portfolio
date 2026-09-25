@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import "@fontsource/space-grotesk/400.css";
+import "@fontsource/space-grotesk/500.css";
+import "@fontsource/space-grotesk/700.css";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-});
+
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://rishav-portfolio-red-beta.vercel.app"),
+  alternates: { canonical: "/" },
   title: "Rishav Yadav | Software Engineer",
 
   description:
@@ -63,7 +65,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
+        <a className="skip-link" href="#main">Skip to content</a>
         {children}
       </body>
     </html>

@@ -25,15 +25,17 @@ export default function Github() {
 
         <div className="mt-16 grid gap-8 lg:grid-cols-2">
 
-          <img
+          <Image
   src="https://github-readme-stats-sigma-five.vercel.app/api?username=RISHAV1985&show_icons=true&theme=tokyonight&hide_border=true"
+  width={495} height={195}
   alt="GitHub Stats"
   className="w-full rounded-xl shadow-lg"
   loading="lazy"
 />
 
-<img
+<Image
   src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=RISHAV1985&layout=compact&theme=tokyonight&hide_border=true"
+  width={495} height={165}
   alt="Top Languages"
   className="w-full rounded-xl shadow-lg"
   loading="lazy"

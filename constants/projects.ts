@@ -8,6 +8,7 @@ export interface Project {
   github: string;
   demo: string;
   featured: boolean;
+  slug?: string;
 }
 
 export const projects: Project[] = [
@@ -25,7 +26,7 @@ export const projects: Project[] = [
       "SQLite",
       "NumPy"
     ],
-    github: "https://github.com/RISHAV1985",
+    github: "",
     demo: "#",
     featured: true,
   },
@@ -44,7 +45,7 @@ export const projects: Project[] = [
       "Keras",
       "NumPy"
     ],
-    github: "https://github.com/RISHAV1985",
+    github: "",
     demo: "#",
     featured: true,
   },
@@ -80,7 +81,7 @@ export const projects: Project[] = [
       "Machine Learning",
       "Research"
     ],
-    github: "#",
+    github: "",
     demo: "#",
     featured: true,
   },
@@ -99,7 +100,7 @@ export const projects: Project[] = [
       "MySQL",
       "Git"
     ],
-    github: "#",
+    github: "",
     demo: "#",
     featured: true,
   },
@@ -117,7 +118,7 @@ export const projects: Project[] = [
     "LLM",
     "React"
   ],
-  github: "https://github.com/RISHAV1985",
+  github: "",
   demo: "#",
   featured: false,
 },
